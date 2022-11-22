@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #FFFFFF;
+    --bodydark-bg: #121214;
+    --time-txt: #323238;
+    --buttons: rgba(66, 211, 255, 13%);
+    --sounds: #323238;
+    --sound-bg: #E1E1E6;
+    --selected-sound: #FFFFFF;
+    --selected-sound-bg: #02799D;
+
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: var(--body-bg);
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+header button {
+    border: none;
+    background-color: transparent;
+}
+
+
+
+main {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(3rem, 5rem + 8vw, 19.2rem);
+}
+
+h1 {
+    font-size: 9.6rem;
+    color: var(--time-txt);
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+}
+
+.volumeSlider {
+    --slider-Thumb: rgb(50, 50, 56);
+    appearance: none;
+    background: var(--slider-Thumb);
+    outline: none;
+    width: 9rem;
+    height: .4rem;
+    border-radius: 9px;   
+    margin-top: 2rem;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%; 
+
+    background: var(--slider-Thumb);
+    cursor: pointer;
+}
+
+.volumeSlider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+
+    background: #2796ee;
+    cursor: pointer;
+}
+.whiteSlider {
+    background: white;
+}
+.blackslider {
+    background: black;
+}
+
+#timer {
+    display: grid;
+    place-items: center;
+}
+
+.buttons {
+    max-height: 48px;
+    
+    display: flex;
+    gap: 14px;
+}
+
+.buttons button {
+    border: none;
+    background: none;
+
+}
+
+#sounds {
+    display: flex;
+    gap: 1.2rem;
+
+    position: absolute;
+    top: 60px;
+}
+
+#sounds button {
+    width: clamp(6.4rem, 2rem + 10vw, 13.8rem);
+    height: 15.2rem;
+
+    border: none;
+    
+    border-radius: 2.4rem;
+    background-color: var(--sound-bg);
+    
+}
+
+button div svg {
+    margin: 1.5rem 0 auto;
+    fill: black;
+}
+
+.whiteVolume {
+    fill: white;
+}
+.blackVolume {
+    fill: black;
+}
+
+button:hover {
+    cursor: grab;
+} 
+
+@media (min-width: 546px) {
+    #sounds {
+        position: static;
+        display: grid;
+
+    }
+}
+
+@media (min-width: 638px) {
+    #sounds {
+        grid-template-columns: auto auto;
+        gap: 3.2rem;
+    }
+    h1 {
+        font-size: 11rem;
+    }
+}
+
